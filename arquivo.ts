@@ -1,4 +1,4 @@
-function sayHello (name: string): string {
+async function sayHello (name: string): string {
   return `Hello ${name}!`
 }
 console.log(sayHello('Trybe'))
