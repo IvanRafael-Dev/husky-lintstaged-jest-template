@@ -30,5 +30,14 @@ describe('UserController', () => {
         expect(response.status).toEqual(400)
       })
     })
+
+    describe('quando a requisição é feita com sucesso', () => {
+      it('deve retornar um status 201', async () => {
+        const response = await supertest(app)
+          .post('/user')
+          .send({ password: 'any_password', email: 'any_email@mail.com', username: 'any_username' })
+        expect(response.status).toEqual(201)
+      })
+    })
   })
 })
