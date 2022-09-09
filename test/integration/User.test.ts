@@ -21,5 +21,14 @@ describe('UserController', () => {
         expect(response.status).toEqual(400)
       })
     })
+
+    describe('quando o campo username não é informado', () => {
+      it('deve retornar um status 400.', async () => {
+        const response = await supertest(app)
+          .post('/user')
+          .send({ password: 'any_password', email: 'any_email@mail.com' })
+        expect(response.status).toEqual(400)
+      })
+    })
   })
 })
