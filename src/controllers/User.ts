@@ -5,6 +5,11 @@ export default class UserController {
     if (!req.body.email) {
       return res.status(400).json({ message: 'Email não informado.' })
     }
-    return res.status(200)
+
+    if (!req.body.password) {
+      return res.status(400).json({ message: 'Password não informado.' })
+    }
+
+    return res.status(200).json()
   }
 }
