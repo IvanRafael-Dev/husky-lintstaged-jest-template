@@ -9,6 +9,6 @@ export default class UserController {
       }
     }
 
-    return res.status(200).json()
+    return res.status(201).json()
   }
 }
